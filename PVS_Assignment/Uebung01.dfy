@@ -21,14 +21,9 @@ ensures m >= x && m >= y && ( m == x || m == y )
 method TestMaxSum() 
 {
     var a,b := *,*;
-    //var a:int := *;
-    //var b:int := *;
-    
     assume a == 1928; 
     assume b == 1;
-
     var s,m := MaxSum(a,b);
-
     assert s == a+b && m == a; 
 
 }
@@ -38,12 +33,12 @@ method Ex_01_4a()
 {
     var x:int, y:int := *,*;
 
-    /*assume P;
-        x := 2*x+1
-    assume Q;
+    assume x ≤ y;
+        x := 2*x+1;
+    assert  x + y ≤ 3*y + 1;
         y := x+y;
-    assume R;
-    */
+    assert y ≤ x + y;
+    
 
 
 }
