@@ -35,12 +35,31 @@ method Ex_01_4a()
 
     assume x ≤ y;
         x := 2*x+1;
-    assert  x + y ≤ 3*y + 1;
+    assert  x ≤ 2*y+1 ;
         y := x+y;
-    assert y ≤ x + y;
-    
-
+    assert y >= (x-1)/2+x;
 
 }
 
 
+method Ex_01_4b()
+{
+    var x:int, y:int := *,*;
+
+    assume y ≥ x && x ≥ 0;
+        x := 2*x+1;
+    assert y ≥ 0 ;
+        y := x+y;
+    assert x ≤ y ;
+
+}
+
+method Ex_01_4c(){
+    var x:int, y:int := *,*;
+
+    assume x == (3/2 - y/4);
+        x := 2*x+1;
+    assume y == 8 - 2*x ;
+        y := x+y;
+    assert x + y == 8 ;
+}
