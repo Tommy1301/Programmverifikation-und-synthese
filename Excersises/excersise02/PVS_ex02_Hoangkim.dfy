@@ -35,7 +35,6 @@ method Test_ReconstructFromMaxSum2()
     assert (x == 10 && y == -20) ∨ (x == -20 && y == 10);
 }
 
-
 /*
 {
      if (s <= m){
@@ -48,3 +47,28 @@ method Test_ReconstructFromMaxSum2()
     
 }
 */
+
+//Problem 3
+//Exercise 2.6
+//a)
+method hoare_triple(){
+    var x:int := *;
+    assume -128 ≤ x < 0; 
+        x:= x-1;
+    assert -129 ≤ x < -1;
+}
+
+
+method hoare_triple_2(){
+    var x,y:int := *,*;
+    assume 0 ≤ x ≤ y < 100;
+    y := y-x;
+    assert 0 ≤ y < 100-x && y<=100; //why equal 100 still correct?
+}
+
+method hoare_triple_3(){
+    var x,y:int := *,*;
+    assume (x % 2) == 0  && y < 100;
+        x,y := y,x;
+    assert y % 2 == 0 && x < 100;
+}
