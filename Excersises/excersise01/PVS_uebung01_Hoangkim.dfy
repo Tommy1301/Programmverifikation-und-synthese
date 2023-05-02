@@ -13,7 +13,6 @@ ensures m <= x && m <= y && (m == x || m == y)
 //Excercise 1.7
 //a)
 method MaxSum(x:int, y:int) returns (s:int,m:int)
-//requires x >= 0 && y >= 0
 ensures s == x+y
 ensures m >= x && m >= y && ( m == x || m == y )
 
