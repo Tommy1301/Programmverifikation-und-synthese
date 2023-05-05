@@ -8,7 +8,7 @@ ensures m >= x && m >= y && ( m == x || m == y )
 //Problem 2
 //excercise 1.8
 method ReconstructFromMaxSum(s: int, m: int) returns (x: int, y:int)
-//requires s>=m && m>=0
+requires s>=m && m>=0
 ensures s == x + y 
 ensures (m == x || m == y) && x <= m && y <= m
 
@@ -63,7 +63,7 @@ method hoare_triple_2(){
     var x,y:int := *,*;
     assume 0 ≤ x ≤ y < 100;
     y := y-x;
-    assert 0 ≤ y < 100-x && y<=100; //why equal 100 still correct?
+    assert (0 ≤ y < 100-x) && (y <= 100); //why y equal 100 still correct?
 }
 
 method hoare_triple_3(){
@@ -72,3 +72,6 @@ method hoare_triple_3(){
         x,y := y,x;
     assert y % 2 == 0 && x < 100;
 }
+
+
+//Problem 4
