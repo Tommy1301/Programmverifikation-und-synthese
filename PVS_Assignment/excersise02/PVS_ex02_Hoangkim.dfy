@@ -36,15 +36,15 @@ method Test_ReconstructFromMaxSum_2()
 method ht3_1(){
     var x:int := *;
     assume -128 ≤ x < 0; 
-        x:= x-1;
-    assert -129 ≤ x < -1;
+        x:= 1 - x;
+    assert 129 >= x >= 1;
 }
 
 
 method ht3_2(){
     var x,y:int := *,*;
     assume 0 ≤ x ≤ y < 100;
-    y := y-x;
+        y := y-x;
     assert (0 ≤ y < 100-x) && (y < 100); 
 }
 
@@ -81,3 +81,4 @@ method ht4_3(){
         x := 2*y;
     assert 10 <= x <= y;
 }
+
