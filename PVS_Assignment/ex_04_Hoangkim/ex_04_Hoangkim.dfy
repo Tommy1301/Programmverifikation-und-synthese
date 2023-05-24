@@ -1,13 +1,13 @@
 //Problem 01
 method sumOdds(n: nat) returns (sum: nat)
-    requires n >= 0;
+    requires n > 0;
     ensures sum == n * n;
 {
     sum := 1;
     var i := 0;
 
     while i < n-1
-        invariant 0 <= i < n - 1;
+        invariant 0 <= i < n;
         invariant sum == (i + 1) * (i + 1);
     {
         i := i + 1;
